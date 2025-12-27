@@ -58,22 +58,24 @@ export default function App() {
       )}
 
       {/* Main Content Area */}
-      <main className="flex-1 relative">
+      <main className="flex-1 relative flex flex-col h-full overflow-hidden">
         {activeTab === 'home' && (
-          <div className="w-full h-full flex flex-col items-center justify-center relative">
+          <div className="w-full h-full flex flex-col items-center justify-center relative pb-16">
             <div className="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
               <span className="text-[200px] font-serif text-[#BADFDB]">GH</span>
             </div>
             
-            <p className="mb-12 text-slate-500 font-serif text-center max-w-[200px]">
+            <p className="mb-16 text-slate-500 font-serif text-center max-w-[200px] animate-fade-in">
               {helpStatus === 'idle' ? "你需要帮助吗？点一下就好。" : "别担心，大家都在。"}
             </p>
 
-            <RippleButton 
-              onClick={handleStartRequest} 
-              onEmotionalClick={() => setShowTreeHole(true)}
-              status={helpStatus === 'active' ? 'active' : helpStatus === 'requesting' ? 'requesting' : 'idle'}
-            />
+            <div className="flex items-center justify-center">
+              <RippleButton 
+                onClick={handleStartRequest} 
+                onEmotionalClick={() => setShowTreeHole(true)}
+                status={helpStatus === 'active' ? 'active' : helpStatus === 'requesting' ? 'requesting' : 'idle'}
+              />
+            </div>
           </div>
         )}
 

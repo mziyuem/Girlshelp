@@ -38,7 +38,7 @@ export const FuzzyMap: React.FC = () => {
   const VP_radius = (r: number) => r; // Viewport scaling helper if needed
 
   return (
-    <div className="relative w-full h-full bg-[#FCF9EA] overflow-hidden flex items-center justify-center" ref={containerRef}>
+    <div className="absolute inset-0 w-full h-full bg-[#FCF9EA] overflow-hidden flex items-center justify-center rounded-[42px]" ref={containerRef}>
       
       {/* Background Rings */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
